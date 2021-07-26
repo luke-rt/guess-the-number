@@ -1,0 +1,13 @@
+*.text=auto
+
+# Binaries
+*.bin binary
+*.o binary
+
+# C
+*.c text
+*.h text
+
+# ASM
+*.asm text
+*.S text
