@@ -1,17 +1,19 @@
-#include "../drivers/ports/ports.h"
+#include "kernel.h"
 
 
 void main() {
-    port_byte_out(0x3d4, 14);
+    isr_install();
+    irq_install();
 
-    int position = port_byte_in(0x3d5);
-    position = position << 8;
+    kprint("Type stuff\n> ");
+}
 
-    port_byte_out(0x3d4, 15);
-    position += port_byte_in(0x3d5);
-
-    int offset_from_vga = position * 2;
-    char *vga = (char*)0xb8000;
-    vga[offset_from_vga] = 'X';
-    vga[offset_from_vga+1] = 0x0f;
+void user_input(char *input) {
+    if (strcmp(input, "END") == 0) {
+        kprint("Stopping the CPU. Bye!\n");
+        asm volatile("hlt");
+    }
+    kprint("You typed '");
+    kprint(input);
+    kprint("'\n> ");
 }
