@@ -3,12 +3,13 @@ LD=ld -m elf_i386
 AS=nasm
 EMU=qemu-system-i386
 
-C_SRC = $(wildcard kernel/*.c drivers/**/*.c)
-HEADERS = $(wildcard kernel/*.h drivers/**/*.h)
-C_OBJ = ${C_SRC:.c=.o}
+C_SRC = $(wildcard kernel/*.c cpu/*.c libc/*.c drivers/*.c)
+HEADERS = $(wildcard kernel/*.h cpu/*.h libc/*.h drivers/*.h)
+C_OBJ = ${C_SRC:.c=.o cpu/interrupt.o}
 
-CFLAGS = -g -Wall -Wextra -fno-pie -ffreestanding -fno-stack-protector
-LDFLAGS =
+CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS += -fno-pie -ffreestanding -fno-stack-protector -fno-builtin
+CFLAGS += -nostdlib -nostdinc -nostartfiles -nodefaultlibs
 
 bin/guess-the-number.iso: boot/bootsect.bin kernel.bin
 	cat $^ > bin/guess-the-number.iso
@@ -23,11 +24,12 @@ run: bin/guess-the-number.iso
 	${CC} ${CFLAGS} -c $< -o $@
 
 %.o: %.asm
-	nasm $< -f elf -o $@ -i boot
+	nasm $< -f elf -o $@
 
 %.bin: %.asm
-	nasm $< -f bin -o $@ -i boot
+	nasm $< -f bin -o $@
 
 clean:
 	rm -rf *.o *.bin *.iso
-	rm -rf kernel/*.o boot/*.bin drivers/*.o drivers/screen/*.o drivers/ports/*.o boot/*.o bin/*.iso
+	rm -rf kernel/*.o boot/*.bin boot/*.o bin/*.iso cpu/*.o libc/*.o drivers/*.o
+	rm -rf drivers/screen/*.o drivers/ports/*.o
