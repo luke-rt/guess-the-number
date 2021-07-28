@@ -38,3 +38,10 @@ make run
 ```
 
 If this doesn't work, change the `EMU` variable in Makefile to your corresponding qemu path variable
+
+## TODO
+- Better random number generator(currently has pseudo random digits but that repeat with each boot)
+- Better bug checking with strtonum in string.c
+
+## License
+[MIT License](https://github.com/ltgr/guess-the-number/blob/master/LICENSE)
