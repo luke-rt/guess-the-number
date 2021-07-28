@@ -2,6 +2,8 @@
 #define SCREEN_H
 
 #include "../cpu/util.h"
+#include "../cpu/ports.h"
+#include "../libc/mem.h"
 
 #define VIDEO_ADDRESS 0xb8000
 #define MAX_ROWS 25
