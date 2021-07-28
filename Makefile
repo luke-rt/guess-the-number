@@ -18,7 +18,7 @@ kernel.bin: boot/entry.o ${C_OBJ}
 	${LD} -o $@ -Ttext 0x1000 $^ --oformat binary
 
 run: bin/guess-the-number.iso
-	${EMU} -fda bin/guess-the-number.iso
+	${EMU} -hda bin/guess-the-number.iso
 
 %.o: %.c ${HEADERS}
 	${CC} ${CFLAGS} -c $< -o $@
