@@ -2,6 +2,9 @@
 #define UTIL_H
 
 
+#include <stdint.h>
+#include <stddef.h>
+
 #define low16(address) (u16)((address) & 0xFFFF)
 #define high16(address) (u16)(((address) >> 16) & 0xFFFF)
 
