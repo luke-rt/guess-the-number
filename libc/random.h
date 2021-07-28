@@ -1,10 +1,10 @@
-#ifndef RANDOM_H
-#define RANDOM_H
+#ifndef RAND_H
+#define RAND_H
 
 
 #include "../cpu/util.h"
 
-u32 rand();
+int rand();
 
 
 #endif

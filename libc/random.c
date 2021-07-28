@@ -1,10 +1,11 @@
 #include "random.h"
 
-u16 lfsr = 0xACE1u;
-u32 bit;
+u32 state = 777;
 
-u32 rand() {
-    // random number generator using Linear Feedback Shift Register
-    bit  = ((lfsr >> 0) ^ (lfsr >> 2) ^ (lfsr >> 3) ^ (lfsr >> 5) ) & 1;
-    return lfsr =  (lfsr >> 1) | (bit << 15);
+int rand(void)
+{
+    state = state * 1664525 + 1013904223;
+    return state >> 24;
+
 }
+

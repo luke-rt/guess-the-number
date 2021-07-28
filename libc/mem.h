@@ -3,7 +3,8 @@
 
 #include "../cpu/util.h"
 
-void memory_copy(u8 *source, u8 *dest, int nbytes);
-void memory_set(u8 *dest, u8 val, u32 len);
+void memcpy(u8 *source, u8 *dest, int nbytes);
+void memset(u8 *dest, u8 val, u32 len);
+u32 kmalloc(size_t size, int align, u32* address);
 
 #endif
