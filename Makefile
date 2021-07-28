@@ -7,12 +7,12 @@ C_SRC = $(wildcard kernel/*.c cpu/*.c libc/*.c drivers/*.c)
 HEADERS = $(wildcard kernel/*.h cpu/*.h libc/*.h drivers/*.h)
 C_OBJ = ${C_SRC:.c=.o cpu/interrupt.o}
 
-CFLAGS = -g -Wall -Wextra -Werror
-CFLAGS += -fno-pie -ffreestanding -fno-stack-protector -fno-builtin
-CFLAGS += -nostdlib -nostdinc -nostartfiles -nodefaultlibs
+CFLAGS = -g -Wall -Wextra
+CFLAGS += -fno-pie -ffreestanding -fno-stack-protector
 
 bin/guess-the-number.iso: boot/bootsect.bin kernel.bin
 	cat $^ > bin/guess-the-number.iso
+	rm -rf $^
 
 kernel.bin: boot/entry.o ${C_OBJ}
 	${LD} -o $@ -Ttext 0x1000 $^ --oformat binary
