@@ -1,8 +1,8 @@
 #ifndef SCREEN_H
 #define SCREEN_H
 
-#include "../cpu/util.h"
-#include "../cpu/ports.h"
+#include "../kernel/util.h"
+#include "../sys/ports.h"
 #include "../libc/mem.h"
 
 #define VIDEO_ADDRESS 0xb8000

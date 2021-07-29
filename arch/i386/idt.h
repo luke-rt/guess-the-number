@@ -1,7 +1,7 @@
 #ifndef IDT_H
 #define IDT_H
 
-#include "util.h"
+#include "../../kernel/util.h"
 
 
 #define KERNEL_CS 0x08

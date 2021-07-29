@@ -3,12 +3,12 @@
 
 
 #include "idt.h"
-#include "../drivers/screen.h"
-#include "../drivers/keyboard.h"
-#include "../libc/string.h"
-#include "timer.h"
-#include "ports.h"
-#include "util.h"
+#include "../../drivers/screen.h"
+#include "../../drivers/keyboard.h"
+#include "../../libc/string.h"
+#include "../../sys/timer.h"
+#include "../../sys/ports.h"
+#include "../../kernel/util.h"
 
 // ISRs for CPU exceptions
 extern void isr0();

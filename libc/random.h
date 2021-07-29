@@ -2,7 +2,7 @@
 #define RAND_H
 
 
-#include "../cpu/util.h"
+#include "../kernel/util.h"
 
 int rand();
 

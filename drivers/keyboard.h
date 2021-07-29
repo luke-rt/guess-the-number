@@ -2,9 +2,9 @@
 #define KEYBOARD_H
 
 
-#include "../cpu/util.h"
-#include "../cpu/ports.h"
-#include "../cpu/isr.h"
+#include "../kernel/util.h"
+#include "../sys/ports.h"
+#include "../arch/i386/isr.h"
 #include "screen.h"
 #include "../libc/string.h"
 #include "../libc/function.h"

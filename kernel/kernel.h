@@ -2,7 +2,7 @@
 #define KERNEL_H
 
 
-#include "../cpu/isr.h"
+#include "../arch/i386/isr.h"
 #include "../drivers/screen.h"
 #include "../libc/string.h"
 #include "../libc/mem.h"
