@@ -26,10 +26,10 @@ qemu: bin/guess-the-number.iso
 	${CC} ${CFLAGS} -c $< -o $@
 
 %.o: %.asm
-	nasm $< -f elf -o $@
+	${AS} $< -f elf -o $@
 
 %.bin: %.asm
-	nasm $< -f bin -o $@
+	${AS} $< -f bin -o $@
 
 clean:
 	rm -rf *.bin *.iso
