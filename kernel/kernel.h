@@ -4,9 +4,9 @@
 
 #include "../arch/i386/isr.h"
 #include "../drivers/screen.h"
-#include "../libc/string.h"
-#include "../libc/mem.h"
-#include "../libc/random.h"
+#include <string.h>
+#include <mem.h>
+#include <random.h>
 
 void user_input(char *input);
 

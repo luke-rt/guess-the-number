@@ -3,7 +3,7 @@
 
 #include "../kernel/util.h"
 #include "../sys/ports.h"
-#include "../libc/mem.h"
+#include <mem.h>
 
 #define VIDEO_ADDRESS 0xb8000
 #define MAX_ROWS 25

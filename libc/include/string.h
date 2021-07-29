@@ -2,7 +2,7 @@
 #define STRINGS_H
 
 
-#include "../kernel/util.h"
+#include "../../kernel/util.h"
 
 void int_to_ascii(int n, char str[]);
 void hex_to_ascii(int n, char str[]);

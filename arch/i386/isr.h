@@ -5,10 +5,11 @@
 #include "idt.h"
 #include "../../drivers/screen.h"
 #include "../../drivers/keyboard.h"
-#include "../../libc/string.h"
 #include "../../sys/timer.h"
 #include "../../sys/ports.h"
 #include "../../kernel/util.h"
+
+#include <string.h>
 
 // ISRs for CPU exceptions
 extern void isr0();
