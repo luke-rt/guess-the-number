@@ -3,9 +3,10 @@ LD=ld -m elf_i386
 AS=nasm
 EMU=qemu-system-i386
 
-C_SRC = $(wildcard kernel/*.c cpu/*.c libc/*.c drivers/*.c)
-HEADERS = $(wildcard kernel/*.h cpu/*.h libc/*.h drivers/*.h)
-C_OBJ = ${C_SRC:.c=.o cpu/interrupt.o}
+C_SRC = $(wildcard kernel/*.c sys/*.c libc/*.c drivers/*.c arch/i386/*.c)
+HEADERS = $(wildcard kernel/*.h sys/*.h libc/*.h drivers/*.h arch/i386/*.h)
+C_OBJ = ${C_SRC:.c=.o arch/i386/interrupt.o}
+OBJ = ${wildcard ./**/*.o ./**/**/*.o ./**/**/**/*.o}
 
 CFLAGS = -g -Wall -Wextra
 CFLAGS += -fno-pie -ffreestanding -fno-stack-protector
@@ -17,8 +18,8 @@ bin/guess-the-number.iso: boot/bootsect.bin kernel.bin
 kernel.bin: boot/entry.o ${C_OBJ}
 	${LD} -o $@ -Ttext 0x1000 $^ --oformat binary
 
-run: bin/guess-the-number.iso
-	${EMU} -hda bin/guess-the-number.iso
+qemu: bin/guess-the-number.iso
+	${EMU} -drive file=bin/guess-the-number.iso,format=raw,media=disk
 
 %.o: %.c ${HEADERS}
 	${CC} ${CFLAGS} -c $< -o $@
@@ -30,6 +31,5 @@ run: bin/guess-the-number.iso
 	nasm $< -f bin -o $@
 
 clean:
-	rm -rf *.o *.bin *.iso
-	rm -rf kernel/*.o boot/*.bin boot/*.o bin/*.iso cpu/*.o libc/*.o drivers/*.o
-	rm -rf drivers/screen/*.o drivers/ports/*.o
+	rm -rf *.bin *.iso
+	rm -rf ${OBJ}
