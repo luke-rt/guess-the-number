@@ -15,6 +15,7 @@ C_SRC = $(wildcard kernel/*.c sys/*.c libc/**/*.c drivers/*.c arch/i386/*.c)
 HEADERS = $(wildcard kernel/*.h sys/*.h libc/**/*.h drivers/*.h arch/i386/*.h)
 C_OBJ = ${C_SRC:.c=.o arch/i386/interrupt.o}
 OBJ = ${wildcard ./**/*.o ./**/**/*.o ./**/**/**/*.o}
+all: bin/guess-the-number.iso
 
 bin/guess-the-number.iso: boot/bootsect.bin kernel.bin
 	cat $^ > bin/guess-the-number.iso
