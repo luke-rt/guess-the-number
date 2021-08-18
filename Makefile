@@ -37,5 +37,5 @@ qemu: bin/guess-the-number.iso
 	${AS} $< -f bin -o $@
 
 clean:
-	rm -rf *.bin *.iso
+	rm -rf bin/*
 	rm -rf ${OBJ}

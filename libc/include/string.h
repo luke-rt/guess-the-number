@@ -4,6 +4,8 @@
 
 #include "../../kernel/util.h"
 
+#define NUL '\0'
+
 void int_to_ascii(int n, char str[]);
 void hex_to_ascii(int n, char str[]);
 void reverse(char s[]);
