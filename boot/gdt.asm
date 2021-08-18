@@ -3,7 +3,7 @@ gdt_start:
     dd 0x0
 
 gdt_code:
-    dw 0xffff 5
+    dw 0xffff
     dw 0x0
     db 0x0
     db 10011010b
