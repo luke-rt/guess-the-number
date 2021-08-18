@@ -18,7 +18,7 @@ OBJ = ${wildcard ./**/*.o ./**/**/*.o ./**/**/**/*.o}
 all: bin/guess-the-number.iso
 
 bin/guess-the-number.iso: boot/bootsect.bin kernel.bin
-    mkdir -p bin
+	mkdir -p bin
 	cat $^ > bin/guess-the-number.iso
 	rm -rf $^
 
