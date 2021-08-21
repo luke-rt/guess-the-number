@@ -9,6 +9,9 @@ A bare metal operating system kernel to play Guess the Number on
 - custom bootloader
 - pseudo-random number generator
 
+## Resources
+Thanks to [@cfenollosa](https://github.com/cfenollosa)'s amazing [os-tutorial](https://github.com/cfenollosa/os-tutorial) repository for teaching me how to write an operating system!
+
 ## Running
 Download the most recent disk image from [releases](https://github.com/ltgr/guess-the-number/releases/)
 
@@ -24,7 +27,7 @@ Replace `qemu-system-i386` with the name of your qemu path variable(may vary wit
 With your package manager, install
 - qemu
 - gcc
-- GNU make
+- GNU Make
 - nasm
 
 #### Mac
