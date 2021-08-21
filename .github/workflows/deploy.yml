@@ -1,9 +1,6 @@
 name: Deployment
 
-on:
-  push:
-    tags:
-      - "v*"
+on: [push]
 
 jobs:
   deploy:
@@ -11,8 +8,7 @@ jobs:
 
     steps:
       - name: Build
-        run: |
-          make
+        run: make
 
       - name: Create release
         id: create_release
