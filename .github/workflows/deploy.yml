@@ -6,9 +6,14 @@ on:
       - "v*"
 
 jobs:
-  release:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Build
+        run: |
+          make
+
       - name: Create release
         id: create_release
         uses: actions/create-release@latest
@@ -17,5 +22,6 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          draft: false
+          draft: true
           prerelease: false
+          files: ./bin/guess-the-number.iso
