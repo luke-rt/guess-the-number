@@ -31,9 +31,10 @@ With your package manager, install
 - nasm
 
 #### Mac
-> qemu, GNU make, and nasm
+NOTE: CURRENTLY DOESN'T WORK, WILL FIX
+> qemu, GNU make, wget, and nasm
 ```sh
-brew install qemu make nasm
+brew install qemu make nasm wget
 ```
 
 > ld i386 elf
@@ -42,7 +43,7 @@ wget 'ftp://sourceware.org/pub/binutils/snapshots/binutils-2.23.52.tar.bz2'
 ```
 > then, unzip the file, cd into the directory, and run
 ```sh
-./configure --target=i386-elf && make install
+./configure --target=i386-elf && make
 ```
 
 ### Steps
