@@ -9,7 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build
-        run: make
+        run: |
+          sudo apt-get install -y nasm
+          make
 
       - name: Create release
         id: create_release
