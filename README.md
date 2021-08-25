@@ -26,24 +26,16 @@ Replace `qemu-system-i386` with the name of your qemu path variable(may vary wit
 #### Linux
 With your package manager, install
 - qemu
-- gcc
+- gcc(i386 elf)
 - GNU Make
 - nasm
 
 #### Mac
-NOTE: CURRENTLY DOESN'T WORK, WILL FIX
-> qemu, GNU make, wget, and nasm
+Install dependencies with
 ```sh
-brew install qemu make nasm wget
-```
-
-> ld i386 elf
-```sh
-wget 'ftp://sourceware.org/pub/binutils/snapshots/binutils-2.23.52.tar.bz2'
-```
-> then, unzip the file, cd into the directory, and run
-```sh
-./configure --target=i386-elf && make
+brew install qemu nasm
+brew tap nativeos/i386-elf-toolchain
+brew install i386-elf-binutils i386-elf-gcc
 ```
 
 ### Steps
