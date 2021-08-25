@@ -1,7 +1,9 @@
-CC=gcc -elf_i386 -m32
 LD=i386-elf-ld
-AS=nasm
-EMU=qemu-system-i386
+
+CC=/opt/homebrew/bin/gcc-11 -elf_i386 -m32
+LD=/usr/bin/ld -arch i386
+AS=/opt/homebrew/bin/nasm
+EMU=/opt/homebrew/bin/qemu-system-i386
 
 
 CFLAGS += -fno-pie -ffreestanding -fno-stack-protector
