@@ -1,4 +1,4 @@
-# guess-the-number-os
+# guess-the-number OS
 A bare metal operating system kernel to play Guess the Number on
 
 ![screenshot](screenshots/1.png)
