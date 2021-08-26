@@ -32,6 +32,7 @@ With your package manager, install
 
 #### Mac
 > NOTE: does not work on M1 chip
+
 Install dependencies with
 ```sh
 brew install qemu nasm
