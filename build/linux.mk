@@ -5,4 +5,4 @@ EMU=/usr/bin/qemu-system-i386
 
 
 CFLAGS += -fno-pie -ffreestanding -fno-stack-protector
-LDFLAGS += -Ttext 0x1000
+LDFLAGS += -Ttext 0x1000 --oformat binary
