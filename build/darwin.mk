@@ -5,3 +5,4 @@ EMU=/usr/local/bin/qemu-system-i386
 
 
 CFLAGS += -fno-pie -ffreestanding -fno-stack-protector
+LDFLAGS += -install_name
