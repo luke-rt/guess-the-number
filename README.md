@@ -19,7 +19,6 @@ Then, run
 ```sh
 qemu-system-i386 -fda path/to/file/guess-the-number.iso
 ```
-Replace `qemu-system-i386` with the name of your qemu path variable(may vary with OS)
 
 ## Building from source
 ### Requirements
@@ -55,8 +54,6 @@ To run, type
 ```sh
 make qemu
 ```
-
-If this doesn't work, change the `EMU` variable in Makefile to your corresponding qemu path variable
 
 ## TODO
 - Better random number generator(currently has pseudo random digits but that repeat with each boot)
