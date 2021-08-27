@@ -17,3 +17,16 @@ jobs:
       run: sudo apt-get install -y nasm
     - name: make
       run: make
+  
+  build-darwin:
+    
+    runs-on: macos-latest
+    
+    steps:
+    - name: deps
+      run: |
+        brew install qemu nasm
+        brew tap nativeos/i386-elf-toolchain
+        brew install i386-elf-binutils i386-elf-gcc
+    - name: make
+      run: make
