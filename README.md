@@ -58,6 +58,7 @@ make qemu
 ## TODO
 - Better random number generator(currently has pseudo random digits but that repeat with each boot)
 - Better bug checking with strtonum in string.c
+- Stop user from deleting the prompt
 
 ## License
 [MIT License](https://github.com/ltgr/guess-the-number/blob/master/LICENSE)
