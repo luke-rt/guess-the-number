@@ -1,5 +1,5 @@
 CC=/usr/local/bin/i386-elf-gcc
-LD=/usr/bin/ld -arch i386
+LD=/usr/local/bin/i386-elf-gcc
 AS=/usr/local/bin/nasm
 EMU=/usr/local/bin/qemu-system-i386
 
