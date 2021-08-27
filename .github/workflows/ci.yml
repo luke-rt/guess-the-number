@@ -23,6 +23,7 @@ jobs:
     runs-on: macos-latest
     
     steps:
+    - uses: actions/checkout@v2
     - name: deps
       run: |
         brew install qemu nasm
