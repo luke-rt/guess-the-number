@@ -1,6 +1,7 @@
 UNAME_S = $(shell uname -s)
 
 CFLAGS = -g -Wall -Wextra -Ilibc/include
+LDFLAGS = --oformat binary
 
 ifeq ($(UNAME_S), Linux)
 include build/linux.mk
