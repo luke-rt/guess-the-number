@@ -23,7 +23,7 @@ bin/guess-the-number.iso: boot/bootsect.bin kernel.bin
 	rm -rf $^
 
 kernel.bin: boot/entry.o ${C_OBJ}
-	${LD} -o $@ 0x1000 $^ ${LDFLAGS}
+	${LD} -o $@ $^ ${LDFLAGS}
 
 qemu: bin/guess-the-number.iso
 	${EMU} -drive file=bin/guess-the-number.iso,format=raw,media=disk
