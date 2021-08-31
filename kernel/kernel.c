@@ -3,6 +3,8 @@
 int num;
 
 void new_game() {
+    clear_screen();
+
     num = rand() % 100;
     kprint("Guess a number between 1 and 100\n> ");
 }
