@@ -3,9 +3,9 @@
 int num;
 
 void new_game() {
-    clear_screen();
 
     num = rand() % 100;
+
     kprint("Guess a number between 1 and 100\n> ");
 }
 
@@ -13,6 +13,10 @@ void user_input(char *input) {
     if (strcmp(input, "END") == 0) {
         kprint("Stopping the CPU\n");
         asm volatile("hlt");
+    }
+    else if(strcmp(input, "CLEAR") == 0) {
+        clear_screen();
+        kprint("Guess a number between 1 and 100\n> ");
     }
     else if(strtonum(input) == num) {
         kprint("You guessed right!\n");
@@ -34,6 +38,7 @@ void kmain() {
     isr_install();
     irq_install();
 
+    clear_screen();
 
     new_game();
 }
