@@ -1,7 +1,7 @@
 # guess-the-number OS
 A bare metal operating system kernel to play Guess the Number on
 
-![screenshot](/1.png)
+![screenshot](screenshots/1.png)
 
 ## Features
 - Guess the Number
