@@ -1,5 +1,5 @@
-# guess-the-number OS
-A bare metal operating system kernel to play Guess the Number on
+# Guess The Number
+A bare metal kernel to play Guess the Number on
 
 ![screenshot](1.png)
 
@@ -10,7 +10,7 @@ A bare metal operating system kernel to play Guess the Number on
 - pseudo-random number generator
 
 ## Resources
-Thanks to [@cfenollosa](https://github.com/cfenollosa)'s amazing [os-tutorial](https://github.com/cfenollosa/os-tutorial) repository for teaching me how to write an operating system!
+Thanks to [@cfenollosa](https://github.com/cfenollosa)'s amazing [os-tutorial](https://github.com/cfenollosa/os-tutorial) repository for teaching me how to write a kernel!
 
 ## Running
 Download the most recent disk image from [releases](https://github.com/ltgr/guess-the-number/releases/)
