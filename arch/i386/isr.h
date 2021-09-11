@@ -1,13 +1,12 @@
 #ifndef ISR_H
 #define ISR_H
 
-
-#include "idt.h"
-#include "../../drivers/screen.h"
 #include "../../drivers/keyboard.h"
-#include "../../sys/timer.h"
-#include "../../sys/ports.h"
+#include "../../drivers/screen.h"
 #include "../../kernel/util.h"
+#include "../../sys/ports.h"
+#include "../../sys/timer.h"
+#include "idt.h"
 
 #include <string.h>
 
@@ -80,10 +79,10 @@ extern void irq15();
 #define IRQ15 47
 
 typedef struct {
-   u32 ds;
-   u32 edi, esi, ebp, esp, ebx, edx, ecx, eax;
-   u32 int_no, err_code;
-   u32 eip, cs, eflags, useresp, ss;
+  u32 ds;
+  u32 edi, esi, ebp, esp, ebx, edx, ecx, eax;
+  u32 int_no, err_code;
+  u32 eip, cs, eflags, useresp, ss;
 } registers_t;
 
 void isr_install();
