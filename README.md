@@ -1,7 +1,7 @@
 # Guess The Number
 A bare metal kernel to play Guess the Number on
 
-![screenshot](1.png)
+![screenshot](example.gif)
 
 ## Features
 - Guess the Number
