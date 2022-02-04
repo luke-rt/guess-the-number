@@ -13,7 +13,7 @@ A bare metal kernel to play Guess the Number on
 Thanks to [@cfenollosa](https://github.com/cfenollosa)'s amazing [os-tutorial](https://github.com/cfenollosa/os-tutorial) repository for teaching me how to write a kernel!
 
 ## Running
-Download the most recent disk image from [releases](https://github.com/ltgr/guess-the-number/releases/)
+Download the most recent disk image from [releases](https://github.com/luketio/guess-the-number/releases/)
 
 Then, run
 ```sh
@@ -43,7 +43,7 @@ brew install i386-elf-binutils i386-elf-gcc
 
 Clone this repository with
 ```sh
-git clone https://github.com/ltgr/guess-the-number.git
+git clone https://github.com/luketio/guess-the-number.git
 ```
 then to build the disk image
 ```sh
