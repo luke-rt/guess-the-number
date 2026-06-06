@@ -7,7 +7,7 @@ A bare metal kernel with just Guess the Number
 - Guess the Number
 - 32-bit
 - custom bootloader
-- pseudo-random number generator
+- pseudo-random number generator seeded on user input ticks
 
 ## Resources
 Thanks to [@cfenollosa](https://github.com/cfenollosa)'s amazing [os-tutorial](https://github.com/cfenollosa/os-tutorial) repo
@@ -26,8 +26,8 @@ make qemu
 ```
 
 ## TODO
-- Better random number generator(currently has pseudo random digits but that repeat with each boot)
-- Stop user from deleting the prompt
+- [x] Better random number generator(currently has pseudo random digits but that repeat with each boot)
+- [ ] Stop user from deleting the prompt
 
 ## License
 [MIT License](https://github.com/luke-rt/guess-the-number/blob/master/LICENSE)
