@@ -1,16 +1,19 @@
 #include "screen.h"
 
 // private
-int get_offset(int col, int row) { return 2 * (row * MAX_COLS + col); }
+int get_offset(int col, int row) {
+  return 2 * (row * MAX_COLS + col);
+}
 
-int get_offset_row(int offset) { return offset / (2 * MAX_COLS); }
+int get_offset_row(int offset) {
+  return offset / (2 * MAX_COLS);
+}
 
 int get_offset_col(int offset) {
   return (offset - (get_offset_row(offset) * 2 * MAX_COLS)) / 2;
 }
 
 int get_cursor_offset() {
-
   port_byte_out(REG_SCREEN_CTRL, 14);
   int offset = port_byte_in(REG_SCREEN_DATA) << 8;
   port_byte_out(REG_SCREEN_CTRL, 15);
@@ -104,7 +107,9 @@ void kprint_at(char *message, int col, int row) {
   }
 }
 
-void kprint(char *message) { kprint_at(message, -1, -1); }
+void kprint(char *message) {
+  kprint_at(message, -1, -1);
+}
 
 void kprint_backspace() {
   int offset = get_cursor_offset() - 2;

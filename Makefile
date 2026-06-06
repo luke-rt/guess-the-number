@@ -1,21 +1,16 @@
-UNAME_S = $(shell uname -s)
+CC = i686-linux-gnu-gcc -m32
+LD = i686-linux-gnu-ld -m elf_i386
+AS = nasm
+EMU = qemu-system-i386 -display curses
 
 CFLAGS = -g -Wall -Wextra -Wpedantic -Ilibc/include
+CFLAGS += -fno-pie -ffreestanding -fno-stack-protector
 LDFLAGS = -Ttext 0x1000 --oformat binary
-
-ifeq ($(UNAME_S), Linux)
-include build/linux.mk
-endif
-
-ifeq ($(UNAME_S), Darwin)
-include build/darwin.mk
-endif
 
 C_SRC = $(wildcard kernel/*.c sys/*.c libc/**/*.c drivers/*.c arch/i386/*.c)
 HEADERS = $(wildcard kernel/*.h sys/*.h libc/**/*.h drivers/*.h arch/i386/*.h)
 C_OBJ = ${C_SRC:.c=.o arch/i386/interrupt.o}
 OBJ = ${wildcard ./**/*.o ./**/**/*.o ./**/**/**/*.o}
-
 
 all: bin/guess-the-number.iso
 

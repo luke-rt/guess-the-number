@@ -3,14 +3,13 @@
 int num;
 
 void new_game() {
-
   num = rand() % 100;
 
   kprint("Guess a number between 1 and 100\n> ");
 }
 
 void user_input(char *input) {
-  if (strcmp(input, "END") == 0) {
+  if (strcmp(input, "EXIT") == 0) {
     kprint("Stopping the CPU\n");
     asm volatile("hlt");
   } else if (strcmp(input, "CLEAR") == 0) {

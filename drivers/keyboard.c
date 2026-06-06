@@ -40,4 +40,6 @@ static void keyboard_callback(registers_t regs) {
   UNUSED(regs);
 }
 
-void init_keyboard() { register_interrupt_handler(IRQ1, keyboard_callback); }
+void init_keyboard() {
+  register_interrupt_handler(IRQ1, keyboard_callback);
+}
