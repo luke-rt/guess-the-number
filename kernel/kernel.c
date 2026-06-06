@@ -1,5 +1,7 @@
 #include "kernel.h"
 
+extern u32 tick;
+
 int num;
 
 void new_game() {
@@ -9,6 +11,12 @@ void new_game() {
 }
 
 void user_input(char *input) {
+  static int seeded = 0;
+  if (!seeded) {
+    srand(tick);
+    num = rand() % 100;
+    seeded = 1;
+  }
   if (strcmp(input, "EXIT") == 0) {
     kprint("Stopping the CPU\n");
     asm volatile("hlt");

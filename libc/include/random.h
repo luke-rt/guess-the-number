@@ -3,6 +3,7 @@
 
 #include "../../kernel/util.h"
 
+void srand(u32 seed);
 int rand();
 
 #endif
